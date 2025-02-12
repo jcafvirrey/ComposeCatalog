@@ -3,6 +3,7 @@ package com.example.composecatalog
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
@@ -19,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun MyRadioButton(name: String, onItemSelected: (String) -> Unit) {
 
-    Column(Modifier.fillMaxSize(),) {
+    Column(Modifier.fillMaxWidth(),) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             RadioButton(
                 selected = (name == "Ejemplo 1"), onClick = {onItemSelected("Ejemplo 1") }, enabled = true

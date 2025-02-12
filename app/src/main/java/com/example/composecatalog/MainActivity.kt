@@ -35,11 +35,14 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ){
                     var show by remember { mutableStateOf(false) }
-                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-                        Button(onClick = {show = true}) {
+                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.TopStart){
+                        /*Button(onClick = {show = true}) {
                             Text(text = "Show Dialog")
-                        }
-                        MyDialog(show = show, onDismiss = {show = false}, onConfirm = { Log.i("dialog", "Click Done")})
+                        }*/
+                        //MyDialog(show = show, onDismiss = {show = false}, onConfirm = { Log.i("dialog", "Click Done")})
+                        //MySingleCustomDialog(show = show, onDismiss = {show = false})
+                        //MyComplexDialog(show, onDismiss = {show = false})MyConfirmationDialog(show = show, onDismiss ={show = false} )
+                        SimpleRecyclerView()
                     }
                     }
                 }
