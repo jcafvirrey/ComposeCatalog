@@ -8,6 +8,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import com.example.composecatalog.ui.theme.ComposeCatalogTheme
 import com.example.composecatalog.model.SuperHeroGridView
+import com.example.composecatalog.model.SuperHeroStickyView
+import com.example.composecatalog.model.SuperHeroWithSpecialControl
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +30,9 @@ class MainActivity : ComponentActivity() {
                         //MyComplexDialog(show, onDismiss = {show = false})MyConfirmationDialog(show = show, onDismiss ={show = false} )
                         //SimpleRecyclerView()
                         //SuperHeroView()
-                        SuperHeroGridView()
+                        //SuperHeroGridView()
+                    //SuperHeroWithSpecialControl()
+                    SuperHeroStickyView()
                     }
                     }
                 }

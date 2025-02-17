@@ -1,4 +1,5 @@
 plugins {
+    alias{libs.plugins.jetbrainsKotlinSerialitation}
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
@@ -41,6 +42,8 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.serialization.json)
     implementation (libs.androidx.material.icons.extended)
     implementation(libs.material3)
     implementation(libs.coil.compose)
