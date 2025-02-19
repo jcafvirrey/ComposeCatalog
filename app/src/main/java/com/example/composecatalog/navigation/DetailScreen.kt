@@ -16,18 +16,29 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun DetailScreen(name: String, navigateToBack: () ->Unit) {
+fun DetailScreen(
+    name: String,
+    navigateToSettings: (SettingsInfo) -> Unit,
+    navigateToBack: () -> Unit
+) {
     Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(modifier = Modifier.weight(1f))
-        Text(text = "DETAIL SCREEN ", fontSize = 25.sp )
+        Text(text = "DETAIL SCREEN ", fontSize = 25.sp)
         Spacer(modifier = Modifier.weight(1f))
         Text(text = name, fontSize = 25.sp)
         Spacer(modifier = Modifier.weight(1f))
-        Button(onClick = {}){
+        Button(onClick = {
+            val seetingsInfo = SettingsInfo(
+                name = "Profesor",
+                id = 1,
+                darkMode = true,
+                suscribete = true
+            )
+            navigateToSettings(seetingsInfo)}) {
             Text(text = "Navegar a ajustes")
         }
         Spacer(modifier = Modifier.weight(1f))
-        Button(onClick = {navigateToBack()}){
+        Button(onClick = { navigateToBack() }) {
             Text(text = "Navegar al Login")
         }
         Spacer(modifier = Modifier.weight(1f))

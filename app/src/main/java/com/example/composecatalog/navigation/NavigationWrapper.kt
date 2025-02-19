@@ -20,11 +20,17 @@ fun NavigationWrapper(){
         }
         composable<Detail>{backStackEntry ->
             val detail: Detail = backStackEntry.toRoute()
-            DetailScreen(detail.name){
-                navController.navigate(Login){
+            DetailScreen(detail.name,
+                navigateToSettings = {navController.navigate(Settings(it))},
+                //Usada para navegar a un punto concreto dentro de la pila de screens
+                /**navigateToBack = {navController.navigate(Login){
                     popUpTo<Login>{inclusive = true}
-                }
+                }*/
+                navigateToBack = {navController.navigateUp()}
+                )
             }
+        composable<Settings>{
+            SettingsScreen()
+        }
         }
     }
-}

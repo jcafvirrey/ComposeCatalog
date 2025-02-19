@@ -15,6 +15,7 @@ material3 = "1.4.0-alpha07"
 materialIconsExtended = "1.7.7"
 navigationCompose = "2.8.2"
 kotlinSerialization = "1.7.0"
+kotlinParcelize = "1.8.10"
 
 [libraries]
 androidx-navigation-compose = {group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose"}
@@ -41,8 +42,10 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 
 [plugins]
+
 jetbrainsKotlinSerialitation= {id ="org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin"}
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlinParcelize"}
 
