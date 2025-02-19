@@ -16,16 +16,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun HomeScreen(navigateToDetail: (String) -> Unit) {
-    var text by remember{ mutableStateOf("") }
+fun DetailScreen(name: String, navigateToBack: () ->Unit) {
     Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(modifier = Modifier.weight(1f))
-        Text(text = "HOME SCREEN ", fontSize = 25.sp )
+        Text(text = "DETAIL SCREEN ", fontSize = 25.sp )
         Spacer(modifier = Modifier.weight(1f))
-        TextField(value = text, onValueChange = {text = it})
+        Text(text = name, fontSize = 25.sp)
         Spacer(modifier = Modifier.weight(1f))
-        Button(onClick = {navigateToDetail(text)}){
-            Text(text = "Navegar a Detail")
+        Button(onClick = {}){
+            Text(text = "Navegar a ajustes")
+        }
+        Spacer(modifier = Modifier.weight(1f))
+        Button(onClick = {navigateToBack()}){
+            Text(text = "Navegar al Login")
         }
         Spacer(modifier = Modifier.weight(1f))
     }

@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 
 @Composable
 
@@ -15,7 +16,15 @@ fun NavigationWrapper(){
             LoginScreen{navController.navigate(Home)}
         }
         composable<Home>{
-            HomeScreen()
+            HomeScreen{name -> navController.navigate(Detail(name = name))}
+        }
+        composable<Detail>{backStackEntry ->
+            val detail: Detail = backStackEntry.toRoute()
+            DetailScreen(detail.name){
+                navController.navigate(Login){
+                    popUpTo<Login>{inclusive = true}
+                }
+            }
         }
     }
 }
